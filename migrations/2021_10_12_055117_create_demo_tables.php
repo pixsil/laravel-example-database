@@ -15,8 +15,8 @@ class CreateDemoTables extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
-            $table->varchar('name');
-            $table->varchar('description');
+            $table->string('name');
+            $table->string('description');
             $table->integer('brand');
             $table->integer('build_year');
             $table->timestamps();
@@ -24,8 +24,8 @@ class CreateDemoTables extends Migration
         Schema::create('driving_logs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('car_id');
-            $table->varchar('from');
-            $table->varchar('to');
+            $table->string('from');
+            $table->string('to');
             $table->integer('mileage');
             $table->timestamps();
 
@@ -33,12 +33,12 @@ class CreateDemoTables extends Migration
         });
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
-            $table->varchar('name');
+            $table->string('name');
             $table->timestamps();
         });
         Schema::create('features', function (Blueprint $table) {
             $table->id();
-            $table->varchar('name');
+            $table->string('name');
             $table->timestamps();
         });
         Schema::create('car_feature', function (Blueprint $table) {
