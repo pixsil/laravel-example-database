@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class DemoDatabaseSeeder extends Seeder
 {
@@ -15,7 +16,7 @@ class DemoDatabaseSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('cars')->insert(
+        DB::table('cars')->insert([
             [
                 'id' => 1,
                 'name' => 'Fast car',
@@ -52,14 +53,14 @@ class DemoDatabaseSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
-        );
-        DB::table('driving_logs')->insert(
+        ]);
+        DB::table('driving_logs')->insert([
             [
                 'id' => 1,
                 'car_id' => 1,
                 'from' => 'London',
                 'to' => 'Paris',
-                'milage' => 200,
+                'mileage' => 200,
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
@@ -68,7 +69,7 @@ class DemoDatabaseSeeder extends Seeder
                 'car_id' => 1,
                 'from' => 'Amsterdam',
                 'to' => 'New York',
-                'milage' => 443,
+                'mileage' => 443,
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
@@ -77,7 +78,7 @@ class DemoDatabaseSeeder extends Seeder
                 'car_id' => 2,
                 'from' => 'Paris',
                 'to' => 'Hawaii',
-                'milage' => 532,
+                'mileage' => 532,
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
@@ -86,7 +87,7 @@ class DemoDatabaseSeeder extends Seeder
                 'car_id' => 2,
                 'from' => 'Lisbon',
                 'to' => 'Hong Kong',
-                'milage' => 356,
+                'mileage' => 356,
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
@@ -95,7 +96,7 @@ class DemoDatabaseSeeder extends Seeder
                 'car_id' => 3,
                 'from' => 'Rome',
                 'to' => 'Hawaii',
-                'milage' => 456,
+                'mileage' => 456,
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
@@ -104,15 +105,16 @@ class DemoDatabaseSeeder extends Seeder
                 'car_id' => 3,
                 'from' => 'Boston',
                 'to' => 'New York',
-                'milage' => 864,
+                'mileage' => 864,
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
                 'id' => 7,
                 'car_id' => 4,
+                'to' => 'Dublin',
                 'from' => 'Amsterdam',
-                'milage' => 493,
+                'mileage' => 493,
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
@@ -121,12 +123,12 @@ class DemoDatabaseSeeder extends Seeder
                 'car_id' => 4,
                 'from' => 'New York',
                 'to' => 'Lisabon',
-                'milage' => 145,
+                'mileage' => 145,
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
-        );
-        DB::table('brands')->insert(
+        ]);
+        DB::table('brands')->insert([
             [
                 'id' => 1,
                 'name' => 'Volkswagen',
@@ -145,8 +147,8 @@ class DemoDatabaseSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
-        );
-        DB::table('features')->insert(
+        ]);
+        DB::table('features')->insert([
             [
                 'id' => 1,
                 'name' => 'Airbags',
@@ -165,8 +167,8 @@ class DemoDatabaseSeeder extends Seeder
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             ],
-        );
-        DB::table('car_feature')->insert(
+        ]);
+        DB::table('car_feature')->insert([
             [
                 'id' => 1,
                 'car_id' => 1,
@@ -202,6 +204,6 @@ class DemoDatabaseSeeder extends Seeder
                 'car_id' => 4,
                 'feature_id' => 3,
             ],
-        );
+        ]);
     }
 }
