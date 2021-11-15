@@ -17,7 +17,7 @@ class CreateDemoTables extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
-            $table->integer('brand');
+            $table->integer('brand_id');
             $table->integer('build_year');
             $table->timestamps();
         });
